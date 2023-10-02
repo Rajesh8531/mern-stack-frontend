@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import News from './News';
-require('dotenv').config()
 
 function Rightbar({bool}) {
 
@@ -9,7 +8,7 @@ function Rightbar({bool}) {
 
 
   useEffect(()=>{
-    fetch(`http://newsapi.org/v2/top-headlines?country=us&category=technology&apikey=${process.env.API_KEY}`).then(res=>res.json()).then(data=>setData(data))
+    fetch("http://newsapi.org/v2/top-headlines?country=us&category=technology&apikey=4fbf08e802c44597af3284a59afed20a").then(res=>res.json()).then(data=>setData(data))
   },[])
 
   let elements = data && data.articles.slice(0,10).map((item,index) => ( <News key={index} text={item.title} time={item.publishedAt} />))
