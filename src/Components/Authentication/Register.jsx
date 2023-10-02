@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { NavLink, redirect, useLoaderData,useNavigate } from 'react-router-dom'
 
 export async function loader(){
-  return await fetch('http://localhost:3000/message').then(res=>res.json()).then(data=>(data))
+  return await fetch('https://linkedin-clone-backend-lol0.onrender.com/message').then(res=>res.json()).then(data=>(data))
 }
 
 function Register() {
